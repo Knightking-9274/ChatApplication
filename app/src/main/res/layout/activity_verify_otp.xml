@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="8dp"
+    tools:context=".VerifyOTP">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/verified" />
+
+    <TextView
+        android:id="@+id/txtViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text=" "
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtViewOTP"
+        app:layout_constraintStart_toStartOf="@id/txtViewPhone"
+        app:layout_constraintEnd_toEndOf="@id/txtViewPhone"
+        app:layout_constraintTop_toBottomOf="@id/txtViewPhone"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        tools:text="Enter 6-digit OTP"
+        android:gravity="center"
+        android:textSize="14sp"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtViewOTP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <com.mukeshsolanki.OtpView
+                android:id="@+id/otpView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="number"
+
+                android:cursorVisible="true"
+                android:layout_marginTop="5dp"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                app:OtpHideLineWhenFilled="true"
+                app:OtpItemCount="6"
+                app:OtpItemSpacing="6dp"
+                android:itemBackground="#DCD9D9"
+                app:OtpState_filled="true"
+                app:OtpLineColor="#8C8C8C"
+                app:OtpViewType="line"
+                />
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:backgroundTint="#359FCF"
+                android:layout_marginTop="8dp"
+                android:text="Continue"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
