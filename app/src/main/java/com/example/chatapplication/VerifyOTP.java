@@ -1,6 +1,7 @@
 package com.example.chatapplication;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -79,7 +80,9 @@ public class VerifyOTP extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(VerifyOTP.this, "Logged In!", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(VerifyOTP.this,SetupActivity.class);
+                            startActivity(i);
+                            finishAffinity();
                         } else {
                             Toast.makeText(VerifyOTP.this, "Failed!", Toast.LENGTH_SHORT).show();
                         }

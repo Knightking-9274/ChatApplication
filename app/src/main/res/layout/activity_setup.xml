@@ -3,8 +3,101 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
     tools:context=".SetupActivity">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/avatar"
+
+         />
+
+    <TextView
+        android:id="@+id/txtViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Profile Image"
+        app:layout_constraintStart_toStartOf="@id/imageView"
+        app:layout_constraintEnd_toEndOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtViewOTP"
+        app:layout_constraintStart_toStartOf="@id/txtViewPhone"
+        app:layout_constraintEnd_toEndOf="@id/txtViewPhone"
+        app:layout_constraintTop_toBottomOf="@id/txtViewPhone"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        tools:text="Set Name and Avatar"
+        android:gravity="center"
+        android:textSize="14sp"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtViewOTP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="text"
+                android:padding="10dp"
+                android:background="@drawable/textbox_outline"
+                />
+<!--            <EditText-->
+<!--                android:id="@+id/txtEmail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Email"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:padding="10dp"-->
+<!--                android:background="@drawable/textbox_outline"-->
+<!--                />-->
+<!--            <EditText-->
+<!--                android:id="@+id/txtUserID"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="UserID"-->
+<!--                android:inputType="text"-->
+<!--                android:padding="10dp"-->
+<!--                android:background="@drawable/textbox_outline"-->
+<!--                />-->
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:backgroundTint="#359FCF"
+                android:layout_marginTop="8dp"
+                android:text="Setup"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
