@@ -76,7 +76,7 @@ public class VerifyOTP extends AppCompatActivity {
                 if(verificationId!=null && !verificationId.isEmpty()){
                 PhoneAuthCredential cred = PhoneAuthProvider.getCredential(verificationId,otp);
 
-                auth.signInWithCredential(cred).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    auth.signInWithCredential(cred).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -89,9 +89,9 @@ public class VerifyOTP extends AppCompatActivity {
                     }
 
 
-                });
+                    });
 
-            }else{
+                }else{
                     Toast.makeText(VerifyOTP.this,"Vrification ID is Empty!",Toast.LENGTH_SHORT).show();
             }
 
